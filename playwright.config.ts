@@ -36,7 +36,7 @@ export default defineConfig({
   projects: [
     {
       name: 'setup db',
-      testMatch: /global\.setup\.ts/,
+      testMatch: /global-auth\.setup\.ts/,
       teardown: 'cleanup db', 
     },
     {
@@ -45,7 +45,9 @@ export default defineConfig({
     },
     {
       name: 'chromium with db',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'],
+      storageState: 'playwright/.auth/user.json',
+    },      
       dependencies: ['setup db'],
     },
 
