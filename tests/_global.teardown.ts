@@ -1,5 +1,5 @@
 import { test as setup } from '@playwright/test';
 
-setup('create new database', async ({ }) => {
+setup('teardown test automation', async ({ }) => {
   console.log('starting teardown...');
 });
