@@ -5,8 +5,8 @@ import { HomePage } from '../pages/home-page';
 test.describe('lokalise smoke tests', () => {
   test.beforeEach(async ({ page }) => {
     const homePage = new HomePage(page);
-
-    await page.goto('https://lokalise.com/');
+    homePage.goto()
+    homePage.rejectAll()
   });
 
   test('lokalise sign up message', async ({ page }) => {
